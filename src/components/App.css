@@ -1,0 +1,64 @@
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+}
+
+.info-icon {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.info-icon:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.info-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150%;
+  white-space: nowrap;
+  background: #000;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.info-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
